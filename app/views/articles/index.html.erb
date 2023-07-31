@@ -1,10 +1,13 @@
-<% @articles.each do |article| %>
-  <ul>
-    <li><p><strong>
-      <%= link_to article.title, article_path(article) %>
-    </strong></p>
-    <br>
+<div class="container">
+  <ul class="list-unstyled">
+    <% @articles.each do |article| %>
+      <li>
+        <p><strong>
+          <%= link_to article.title, article_path(article), class: "btn btn-link" %>
+        </strong></p>
+      </li>
+    <% end %>
   </ul>
-<% end %>
 
-<%= link_to "Add new article", new_article_path %>
+  <%= link_to "Add new article", new_article_path, class: "btn btn-primary" %>
+</div>
